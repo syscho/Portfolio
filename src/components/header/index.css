@@ -1,0 +1,8 @@
+.links {
+  color: white;
+}
+.links:hover {
+  color: #ffc04b;
+  transition: 0.9s;
+    box-shadow: 0 0 15px  #f1d900;
+}
