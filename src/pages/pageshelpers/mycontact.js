@@ -143,8 +143,8 @@ export default function Mycontact() {
           </div>
           <form onSubmit={sendEmail}>
             <div className="contactinput">
-              <div class="wrappera">
-                <div class="input-dataa">
+              <div className="wrappera">
+                <div className="input-dataa">
                   <input
                     type="text"
                     required
@@ -152,10 +152,10 @@ export default function Mycontact() {
                     onChange={({ target }) => setFirstname(target.value)}
                     name="FirstName"
                   />
-                  <div class="underline"></div>
+                  <div className="underline"></div>
                   <label>Full Name</label>
                 </div>
-                <div class="input-dataa">
+                <div className="input-dataa">
                   <input
                     type="text"
                     required
@@ -163,10 +163,10 @@ export default function Mycontact() {
                     onChange={({ target }) => setLastname(target.value)}
                     name="Subject"
                   />
-                  <div class="underline"></div>
+                  <div className="underline"></div>
                   <label>Subject</label>
                 </div>
-                <div class="input-dataa">
+                <div className="input-dataa">
                   <input
                     type="text"
                     required
@@ -174,10 +174,10 @@ export default function Mycontact() {
                     onChange={({ target }) => setEmail(target.value)}
                     name="Email"
                   />
-                  <div class="underline"></div>
+                  <div className="underline"></div>
                   <label>Email</label>
                 </div>
-                <div class="input-dataa">
+                <div className="input-dataa">
                   <textarea
                     type="text"
                     required
@@ -185,7 +185,7 @@ export default function Mycontact() {
                     rows="5"
                     placeholder="Your message..."
                     className="textareamail"
-                    maxlength="250"
+                    maxLength="250"
                     value={Message}
                     onChange={({ target }) => setMessage(target.value)}
                     name="Message"

@@ -17,6 +17,7 @@ const WorkItems = [
     description:
       "This is a Netflix clone project with most of the features presented in the original page, be free to SignIn and Login to check it.",
     knowledgeList: "HTML5, CSS3, JavaScript, ReactJs, Redux, Firebase",
+    link: '/contact',
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const WorkItems = [
     description:
       "This is a personal project with basic UI/UX features, the point of this work is make focus on the SearchRoom Feature and apply in other works.",
     knowledgeList: "HTML5, CSS3, Firebase, ReactJs, JavaScript",
+    link: '/work',
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const WorkItems = [
       "This is a personal project where you can login with multiple roles, the porpouse of the project is make focus on Redux to build features.",
     knowledgeList:
       "HTML5, CSS3, MongoDB, ReactJs, JavaScript, Redux, Express, NodeJs",
+    link: '/contact',
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ const WorkItems = [
     description:
       "This is a basic project to consume an API to check in real time the cases of Covid-19 around the world.",
     knowledgeList: "HTML5,CSS3, ReactJs, JavaScript",
+    link: '/work/covidtracker',
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ const WorkItems = [
       "This is a personal project where you can login with multiple roles, the porpouse of the project is make focus on Redux to build features.",
     knowledgeList:
       "HTML5, CSS3, MongoDB, ReactJs, JavaScript, Redux, Express, NodeJs",
+    link: '/contact',
   },
 ];
 

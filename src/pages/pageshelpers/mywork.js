@@ -125,7 +125,7 @@ export default function WorkContainer() {
         {Feature ? null : (
           <div className="photodefault">
             <span id="text"></span>
-            <div class="console-underscore" id="console">
+            <div className="console-underscore" id="console">
               &#95;
             </div>
           </div>
@@ -137,8 +137,8 @@ export default function WorkContainer() {
               <p className="descriptionphoto">{WorkInfo.description}</p>
               <p className="techtitlephoto">Technologies used</p>
               <p className="techphoto">{WorkInfo.knowledgeList}</p>
-              <div class="text-box">
-                <a href="/home" class="btn btn-white btn-animate">
+              <div className="text-box">
+                <a href={WorkInfo.link} className="btn btn-white btn-animate">
                   Live Preview
                 </a>
               </div>

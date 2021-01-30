@@ -1,0 +1,39 @@
+
+.tablecases {
+  color: rgb(0, 58, 53);
+  height: 500px;
+  overflow: auto;
+  width: 100%;
+}
+.tablecountry {
+  width: 25%;
+  border: solid 1px;
+  padding-left: 10px;
+}
+.tablecountry2 {
+  border: solid 1px;
+  width: 15%;
+  padding-left: 10px;
+}
+.tabletitle{
+  font-size: 20px;
+  font-weight: bold;
+  color:white;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(28, 6, 54);
+  border: solid 2px white;
+  border-radius: 7px;
+}
+@media (max-width: 600px) {
+  .recolumn {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .tablename {
+    display: block;
+    justify-content: space-between;
+    width: auto;
+    border: solid 1px;
+  }
+}
