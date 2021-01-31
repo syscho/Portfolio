@@ -26,6 +26,7 @@ export const CenteredContainer = styled.div`
 
 export default function HeaderCovid() {
   const [country, setInputCountry] = useState("Global");
+  const [countryDate, setcountryDate] = useState("Ultima actualización");
   const [casesType, setCasesType] = useState("cases");
   const [countryInfo, setCountryInfo] = useState({});
   const [countries, setCountries] = useState([]);
@@ -61,6 +62,7 @@ export default function HeaderCovid() {
 
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
+
     const url =
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
@@ -70,9 +72,20 @@ export default function HeaderCovid() {
       .then((data) => {
         setInputCountry(countryCode);
         setCountryInfo(data);
+        setcountryDate(dateTimeUpdate(data));
       });
+    if (countryCode === "global") {
+      fetch("https://disease.sh/v3/covid-19/all")
+        .then((response) => response.json())
+        .then((data) => {
+          setCountryInfo(data);
+          setcountryDate("Ultima actualización");
+        });
+    }
   };
-  console.log(countryInfo);
+  // var myDate = new Date(1612010225968);
+  // console.log(myDate);
+  // console.log(countryInfo);
   const prettyPrintStat = (stat) =>
     stat ? `+${numeral(stat).format("0.0a")}` : "+0";
   const sortData = (data) => {
@@ -85,6 +98,52 @@ export default function HeaderCovid() {
       }
     });
     return sortedData;
+  };
+  const dateTimeUpdate = (data) => {
+    const days = [
+      "Domingo",
+      "Lunes",
+      "Martes",
+      "Miercoles",
+      "Jueves",
+      "Viernes",
+      "Sabado",
+    ];
+    const month = [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ];
+    let modTime = new Date(data.updated);
+    const modTimeDaynum = modTime.getDate();
+    const modTimeDay = days[modTime.getDay()];
+    const modTimeYear = modTime.getFullYear();
+    const modTimeMonth = month[modTime.getMonth()];
+    const modTimeHours = modTime.getHours();
+    const modTimeMin = modTime.getMinutes();
+
+    console.log(modTimeDay);
+    const finalDate =
+      modTimeDay +
+      " - " +
+      modTimeDaynum +
+      "/" +
+      modTimeMonth +
+      "/" +
+      modTimeYear +
+      " a Hrs." +
+      modTimeHours +":"+
+      modTimeMin;
+    return finalDate;
   };
   return (
     <>
@@ -101,7 +160,9 @@ export default function HeaderCovid() {
           <div className="search">
             <p className="pcontent">{country}</p>
             <select onChange={onCountryChange} className="selectcontent">
-              <option className="optiontitle">Global</option>
+              <option className="optiontitle" value="global">
+                Global
+              </option>
               {countries.map((country) => (
                 <option
                   value={country.name}
@@ -112,6 +173,7 @@ export default function HeaderCovid() {
                 </option>
               ))}
             </select>
+            <p className="dateupdated">{countryDate}</p>
           </div>
           <div className="result">
             <ContentCovid
@@ -139,7 +201,7 @@ export default function HeaderCovid() {
               icon={<MdAccountBox size={32} color={"black"} />}
             />
           </div>
-            <Tablecases valuetable={tableData} />
+          <Tablecases valuetable={tableData} />
         </div>
         <div className="footer">
           <p className="footertext">

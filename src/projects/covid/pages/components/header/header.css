@@ -68,6 +68,10 @@
   font-size: 20px;
   font-weight: 900;
 }
+.dateupdated{
+  color: red;
+  font-size: 15px;
+}
 .resulttotal {
   font-size: 30px;
   margin-top: 20px;
